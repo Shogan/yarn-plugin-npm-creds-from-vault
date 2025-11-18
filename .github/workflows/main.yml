@@ -18,7 +18,12 @@ jobs:
           fetch-depth: 0
       - name: Build
         run: |
-          npm version --no-git-tag-version -f "$(git describe --tags)"
+          VERSION=$(git describe --tags --always 2>/dev/null || echo "")
+          if [[ -z "$VERSION" ]] || [[ ! "$VERSION" =~ \. ]]; then
+            VERSION=$(node -p "require('./package.json').version")
+          fi
+          VERSION="${VERSION#v}"
+          npm version --no-git-tag-version -f "$VERSION"
           yarn
           yarn build
       - name: Upload build
