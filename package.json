@@ -1,6 +1,6 @@
 {
   "name": "yarn-plugin-npm-creds-from-vault",
-  "version": "0.0.4",
+  "version": "0.0.3",
   "main": "./sources/index.ts",
   "dependencies": {
     "@yarnpkg/cli": "^4.10.0",
