@@ -61,12 +61,12 @@ class EncryptTokenCommand extends BaseCommand {
 const plugin: Plugin = {
   configuration: {
     encryptedTokenAbsoluteFilePath: {
-      description: 'The absolute file path of your GPG encrypted npm registry token)',
+      description: 'The absolute file path of your GPG encrypted npm registry token.',
       type: SettingsType.STRING,
       default: null,
     },
     includedRegistries: {
-      description: 'Optional list of registries that the decrypt hook should NOT target. If not provided, the plugin will attempt to use the encrypted token for all registries.',
+      description: 'List of registries that the decrypt hook should target. Only those listed here will use the encrypted token value for authentication.',
       isArray: true,
       type: SettingsType.STRING,
       default: null,

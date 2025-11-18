@@ -21,7 +21,7 @@ brew install pinentry-mac
 To install the plugin, run the following command in your terminal (where you specify the release version to install):
 
 ```bash
-yarn plugin import https://github.com/Shogan/yarn-plugin-npm-creds-from-vault/releases/download/v0.0.3/plugin-npm-creds-from-vault.js
+yarn plugin import https://github.com/Shogan/yarn-plugin-npm-creds-from-vault/releases/download/v0.0.4/plugin-npm-creds-from-vault.js
 ```
 
 ## Configuration
