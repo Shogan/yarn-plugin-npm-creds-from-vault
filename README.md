@@ -11,7 +11,7 @@ Currently only supports GPG-encrypted vault files (.gpg).
 To install the plugin, run the following command in your terminal:
 
 ```bash
-yarn plugin import https://github.com/{TODO}/main/dist/index.js
+yarn plugin import https://github.com/Shogan/yarn-plugin-npm-creds-from-vault/releases/download/v0.0.1/plugin-npm-creds-from-vault.js
 ```
 
 ## Configuration
