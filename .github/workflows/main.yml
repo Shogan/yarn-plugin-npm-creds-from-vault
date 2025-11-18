@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  release:
+    types: [ created ]
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Build
+        run: |
+          npm version --no-git-tag-version -f "$(git describe --tags)"
+          yarn
+          yarn build
+      - name: Upload build
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: bundles/@yarnpkg/plugin-npm-creds-from-vault.js
+  publish:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == 'release' && github.event.action == 'created'
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: build
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v4
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: plugin-npm-creds-from-vault.js
+          asset_name: plugin-npm-creds-from-vault.js
+          tag: ${{ github.ref }}
+          overwrite: true
