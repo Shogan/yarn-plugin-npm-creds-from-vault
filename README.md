@@ -4,6 +4,8 @@ Avoid storing npm authentication tokens in plaintext on your filesystem.
 
 A plugin to hook the npm authentication process for a selected registry, and retrieve the npm auth token from your own local encrypted storage vault.
 
+<video width="960" height="540" src="https://github.com/user-attachments/assets/4fa4d86f-be75-4f09-b3bc-9a7384851b20"></video>
+
 ## Requirements
 
 Currently only supports GPG (OpenPGP) encrypted vault files (.gpg). This tooling is therefore a requirement for this plugin to work. You can install gnupg on macOS for example using homebrew. Alternatively, for other platforms, the standard methods can be followed to install there.
