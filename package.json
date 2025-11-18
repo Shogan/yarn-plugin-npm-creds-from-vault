@@ -24,7 +24,7 @@
   "author": "Sean Duffy",
   "license": "MIT",
   "scripts": {
-    "build": "builder build plugin && yarn copy-to-test",
+    "build": "builder build plugin",
     "build:dev": "builder build plugin --no-minify",
     "clean": "rimraf bundles",
     "local-install": "yarn plugin import ./bundles/@yarnpkg/plugin-npm-creds-from-vault.js"
